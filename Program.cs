@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Fundamentals.Math;
 using Fundamentals.Enums;
 
@@ -149,6 +150,115 @@ namespace Fundamentals
             }
             var password = new string(buffer);
             Console.WriteLine(password);
+
+            //MultiDimensional Array
+            var rectMatrix = new int[3, 5]
+            {
+                { 1, 2, 3, 4, 5 },
+                { 1, 2, 3, 4, 5 },
+                { 1, 2, 3, 4, 5 }
+            };
+            var row1 = new int[5];
+            for (int i = 0; i < 5; i++)
+                row1[i] = rectMatrix[0, i];
+
+            //IndexOf()
+            int index = Array.IndexOf(row1, 4);
+            Console.WriteLine("Index of 4: " + index);
+
+            //Clear()
+            Array.Clear(row1, 0, 2);
+            Console.WriteLine("Cleared array:\t");
+            foreach (var n in row1)
+                Console.Write( n +"\t");
+            Console.WriteLine();
+            Console.WriteLine();
+
+            //Copy()
+            int[] arr = new int[5];
+            Array.Copy(row1, arr, 5);
+            Console.WriteLine("Copied array:\t");
+            foreach (var n in arr)
+                Console.Write(n + "\t");
+            Console.WriteLine();
+            Console.WriteLine();
+
+            //Sort()
+            var arr3 = new int[4] { 3, 5, 2, 4 };
+            Console.WriteLine("Unsorted array:\t");
+            foreach (var n in arr3)
+                Console.Write(n + "\t");
+            Console.WriteLine();
+
+            Array.Sort(arr3);
+            Console.WriteLine("Sorted array:\t");
+            foreach (var n in arr3)
+                Console.Write(n + "\t");
+            Console.WriteLine();
+
+            //Reverse()
+            Array.Reverse(arr3);
+            Console.WriteLine("Reversed array:\t");
+            foreach (var n in arr3)
+                Console.Write(n + "\t");
+            Console.WriteLine();
+            Console.WriteLine();
+
+            //Lists
+
+            var numeros = new List<int>() { 1, 2, 3, 4, 5 };
+            numeros.Add(1); //append 1 to end of List
+            numeros.AddRange(new int[4] { 5, 6, 7, 1 }); //append array or list
+
+            var numeroIndex = numeros.LastIndexOf(1);
+            numeroIndex = numeros.IndexOf(1);
+
+            numeros.Remove(1);
+            //foreach(var n in numeros) //modifications not allowed within foreach
+            //{
+            //    if (n == 1)
+            //    {
+            //        numeros.Remove(n);
+            //    }
+            //}
+
+
+            //Date-Time
+            var dateTime = new DateTime(2018, 5, 17);
+            var now = DateTime.Now;
+            var today = DateTime.Today;
+            Console.WriteLine("Hour: " + now.Hour);
+            Console.WriteLine("Min: " + now.Minute);
+            Console.WriteLine("Sec: " + now.Second);
+            Console.WriteLine();
+
+            //immutable objects
+            var tomorrow = now.AddDays(1);
+            var yesterday = now.AddDays(-1);
+            Console.WriteLine(now.ToLongDateString());
+            Console.WriteLine(now.ToShortDateString());
+            Console.WriteLine(now.ToLongTimeString());
+            Console.WriteLine(now.ToShortTimeString());
+            Console.WriteLine(now.ToString("yyyy-MM-dd HH:mm"));
+            Console.WriteLine();
+            
+
+            //TimeSpan
+            var timeSpan = new TimeSpan(1, 2, 3);//1hr 2min 3sec
+            var timeSpan2 = TimeSpan.FromHours(1);
+
+            var start = DateTime.Now;
+            var end = DateTime.Now.AddMinutes(2);
+            var duration = end - start;
+            Console.WriteLine("Duration: " + duration);
+
+            Console.WriteLine("Mins: " + timeSpan.Minutes);
+            Console.WriteLine("Total Mins: " + timeSpan.TotalMinutes);
+
+            //immutable objects
+
+
+
         }
     }
 }
