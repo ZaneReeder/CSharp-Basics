@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using Fundamentals.Math;
 using Fundamentals.Enums;
 
@@ -254,11 +255,55 @@ namespace Fundamentals
 
             Console.WriteLine("Mins: " + timeSpan.Minutes);
             Console.WriteLine("Total Mins: " + timeSpan.TotalMinutes);
+            Console.WriteLine();
 
-            //immutable objects
+            //Strings
+            var myName = "Zane Reeder ";
+            Console.WriteLine("Trim: '{0}'", myName.Trim());
+            Console.WriteLine("ToUpper: '{0}'", myName.Trim().ToUpper());
 
+            var ind = myName.IndexOf(' ');
+            var firstName = myName.Substring(0, ind);
+            var lastName = myName.Substring(ind + 1);
+            Console.WriteLine("FirstName: " + firstName);
+            Console.WriteLine("LastName: " + lastName);
 
+            var myNames = myName.Split(' ');
+            Console.WriteLine("FirstName: " + myNames[0]);
+            Console.WriteLine("LastName: " + myNames[1]);
 
+            var wifeName = myName.Replace("Zane", "Elizabeth");
+            Console.WriteLine("Wife Name: " + wifeName);
+
+            bool isNull = String.IsNullOrEmpty(" ".Trim());
+
+            var str = "25";
+            var age25 = Convert.ToByte(str);
+            Console.WriteLine();
+            Console.WriteLine(age25);
+
+            float price30 = 29.95f;
+            var priceStr = price30.ToString("C0");
+            Console.WriteLine();
+
+            //Summarising Text Exercise
+            var sentence = "There is no right or wrong - as long as it makes you happy and doesn't hurt anyone.";
+            var summary = StringUtil.SummarizeText(sentence, 30);
+            Console.WriteLine(summary);
+
+            //String Builder-mutable string
+            var builder = new StringBuilder();
+            builder.Append('-', 10);
+            builder.AppendLine();
+            builder.Append("Header");
+            builder.AppendLine();
+            builder.Append('z', 20);
+            Console.WriteLine(builder);
+
+            builder.Replace('-', '=');
+            builder.Replace('z', '+');
+            builder.Remove(0, 10);
+            builder.Insert(0, new string('-', 10));
         }
     }
 }
