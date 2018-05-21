@@ -1,0 +1,43 @@
+Zane Reeder
+5/12/2018
+C# Basics
+
+/**************************
+Introduction
+***************************/
+
+C# - prog languages
+.NET - framework
+	CLR - common language runtime
+	Class Library for application development
+
+C# -> Intermediate Language Code
+
+CLR(in ILCode, out Native/Machine Code)
+Just In Time Compilation
+
+Application made of classes
+ 
+An overload is an instance of a method with 
+different parameters.
+
+
+/****************************
+Working with Files
+*****************************/
+
+System.IO
+	File, FileInfo
+	Directory, DirectoryInfo
+	Path
+
+File, FileInfo
+	Provide methods for creating copying deleting moving
+	and opening files.
+	File - instance
+	FileInfo - static
+
+Directory - Static
+DirectoryInfo - Instance
+
+Path
