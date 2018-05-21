@@ -1,4 +1,4 @@
-# CSharp-Projects
+# CSharp-Basics
 Basic projects using C# created as a learning process.
 
 Most of the example projects will come from a Udemy C# courses.
